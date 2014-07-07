@@ -95,10 +95,13 @@ public class BuiderSQLUpdate implements BuiderSQL {
 					}						
 					else if((DataType.DECIMAL.name().equals(droidColumn.tipo())) && 
 							(valorCampo.get(bean) != null)){
+						if(primeiroValor)
+							sql.append("");
+						else
+							sql.append(", ");
 						sql.append(campo.getName());
 						sql.append(" = ");
-						sql.append(valorCampo.get(bean));
-						sql.append(", ");
+						sql.append(valorCampo.get(bean));						
 						primeiroValor = false;
 					}						
 					else if((DataType.CHAR.name().equals(droidColumn.tipo()))	&& 
