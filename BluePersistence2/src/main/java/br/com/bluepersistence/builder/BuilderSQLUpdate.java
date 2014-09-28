@@ -8,7 +8,7 @@ import br.com.bluepersistence.annotation.DroidPrimaryKey;
 import br.com.bluepersistence.annotation.DroidTable;
 import br.com.bluepersistence.database.DataType;
 
-public class BuiderSQLUpdate implements BuiderSQL {
+public class BuilderSQLUpdate implements BuilderSQL {
 
 	public StringBuilder sql(Object bean) {
 		StringBuilder sql = new StringBuilder("");

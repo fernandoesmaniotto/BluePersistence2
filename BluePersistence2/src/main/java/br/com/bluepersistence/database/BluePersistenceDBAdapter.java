@@ -3,8 +3,9 @@ package br.com.bluepersistence.database;
 import android.content.Context;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
-import br.com.bluepersistence.builder.BuiderSQL;
-import br.com.bluepersistence.builder.SQLBuiderFactory;
+import br.com.bluepersistence.builder.BuilderSQL;
+import br.com.bluepersistence.builder.BuilderSQLCreateDatabase;
+import br.com.bluepersistence.builder.BuilderSQLCreateTable;
 
 public final class BluePersistenceDBAdapter {
 
@@ -16,7 +17,7 @@ public final class BluePersistenceDBAdapter {
 	}
 
 	public BluePersistenceDBAdapter criarBanco(Object bean) throws SQLException, NoSuchFieldException, IllegalAccessException, IllegalArgumentException {	
-		BuiderSQL criarBanco = SQLBuiderFactory.getInstance("CRIAR_BANCO");		
+		BuilderSQL criarBanco = new BuilderSQLCreateDatabase();	
 		blueDbHelper.setSqlCreateDatabase(criarBanco.sql(bean).toString());
 		blueDbHelper.setBean(bean);		
 		database = blueDbHelper.getWritableDatabase();
@@ -25,7 +26,7 @@ public final class BluePersistenceDBAdapter {
 	
 	public void criarTabela(Object bean) throws SQLException, NoSuchFieldException, IllegalAccessException, IllegalArgumentException{
 		blueDbHelper.setBean(bean);		
-		BuiderSQL criarTabela = SQLBuiderFactory.getInstance("CRIAR_TABELA");
+		BuilderSQL criarTabela = new BuilderSQLCreateTable();
 		database.execSQL(criarTabela.sql(bean).toString());
 	}
 	

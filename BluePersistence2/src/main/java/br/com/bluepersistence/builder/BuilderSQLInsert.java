@@ -6,7 +6,7 @@ import br.com.bluepersistence.annotation.DroidColumn;
 import br.com.bluepersistence.annotation.DroidForeignKey;
 import br.com.bluepersistence.annotation.DroidTable;
 
-public class BuiderSQLInsert implements BuiderSQL {
+public class BuilderSQLInsert implements BuilderSQL {
 
 	public StringBuilder sql(Object bean) throws NoSuchFieldException, IllegalAccessException, IllegalArgumentException {
 		StringBuilder sql = new StringBuilder("");

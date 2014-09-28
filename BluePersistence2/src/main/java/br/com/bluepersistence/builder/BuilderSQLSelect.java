@@ -3,7 +3,7 @@ package br.com.bluepersistence.builder;
 import br.com.bluepersistence.annotation.DroidTable;
 import br.com.bluepersistence.dao.Query;
 
-public class BuiderSQLSelect implements BuiderSelectSQL {
+public class BuilderSQLSelect implements BuilderSelectSQL {
 
 	public StringBuilder sql(Query query) {
 		StringBuilder sql = new StringBuilder("");	

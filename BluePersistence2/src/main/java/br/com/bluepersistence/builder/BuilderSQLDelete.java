@@ -5,7 +5,7 @@ import java.lang.reflect.Field;
 import br.com.bluepersistence.annotation.DroidPrimaryKey;
 import br.com.bluepersistence.annotation.DroidTable;
 
-public class BuiderSQLDelete implements BuiderSQL {
+public class BuilderSQLDelete implements BuilderSQL {
 
 	public StringBuilder sql(Object bean) throws NoSuchFieldException, IllegalAccessException, IllegalArgumentException {
 		StringBuilder sql = new StringBuilder("");
