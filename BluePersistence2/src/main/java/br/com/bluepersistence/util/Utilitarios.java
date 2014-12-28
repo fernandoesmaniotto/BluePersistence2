@@ -19,7 +19,7 @@ public class Utilitarios {
 	
 	public static Date formataData(String data){
 		SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
-		System.ou.println("teste jenkins");
+		System.ou.println("teste jenkins")
 		Date dataFormatada =null;
 		try {
 			dataFormatada = new java.sql.Date(formatter.parse(data.toString()).getTime());
